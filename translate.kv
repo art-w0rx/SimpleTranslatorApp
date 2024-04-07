@@ -1,0 +1,66 @@
+<Interface>:
+    orientation: 'horizontal'
+
+    LeftLayout:
+        orientation: 'vertical'
+
+        TextInput:
+            id: text_translate
+            hint_text: "Введите текст для перевода"
+
+        ToggleButton:
+            id: btn_russian_source
+            text: "C Русского"
+            group: "source_language"
+            on_press: app.on_source_language_russian(self)
+
+        ToggleButton:
+            id: btn_english_source
+            text: "С Английского"
+            group: "source_language"
+            on_press: app.on_source_language_english(self)
+
+        ToggleButton:
+            id: btn_italian_source
+            text: "С Итальянского"
+            group: "source_language"
+            on_press: app.on_source_language_italian(self)
+
+        Label:
+
+        Button:
+            id: btn_translate
+            text: "Перевести"
+            on_press: app.translate_text()
+
+    RightLayout:
+        orientation: 'vertical'
+
+        TextInput:
+            id: translated_label
+            hint_text: "Переведенный текст"
+            readonly: True
+
+        ToggleButton:
+            id: btn_russian_target
+            text: "На Русский"
+            group: "target_language"
+            on_press: app.on_target_language_russian(self)
+
+        ToggleButton:
+            id: btn_english_target
+            text: "На Английский"
+            group: "target_language"
+            on_press: app.on_target_language_english(self)
+
+        ToggleButton:
+            id: btn_italian_target
+            text: "На Итальянский"
+            group: "target_language"
+            on_press: app.on_target_language_italian(self)
+
+        Label:
+
+        Button:
+            text: 'Выход'
+            on_press: app.exit_app()
